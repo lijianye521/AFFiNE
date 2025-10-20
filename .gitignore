@@ -49,6 +49,19 @@ tsconfig.tsbuildinfo
 .DS_Store
 Thumbs.db
 
+# Docker 数据文件 - 不要提交
+.docker/selfhost/storage/
+.docker/selfhost/config/
+.docker/selfhost/postgres/
+.docker/selfhost/.env
+
+# 临时文件和日志
+*.log
+build-*.log
+*.tar.gz
+*.zip
+affine-backup-*
+
 # env
 *.env.local
 *.local.env

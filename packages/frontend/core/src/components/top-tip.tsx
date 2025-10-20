@@ -73,24 +73,25 @@ export const TopTip = ({
     globalDialogService.open('sign-in', {});
   }, [globalDialogService]);
 
-  if (
-    !BUILD_CONFIG.isElectron &&
-    showLocalDemoTips &&
-    workspace.flavour === 'local'
-  ) {
-    return (
-      <LocalDemoTips
-        isLoggedIn={isLoggedIn}
-        onLogin={onLogin}
-        onEnableCloud={() =>
-          confirmEnableCloud(workspace, { openPageId: pageId })
-        }
-        onClose={() => {
-          setShowLocalDemoTips(false);
-        }}
-      />
-    );
-  }
+  // 【已删除】LocalDemoTips 云服务提示横幅
+  //   if (
+  //     !BUILD_CONFIG.isElectron &&
+  //     showLocalDemoTips &&
+  //     workspace.flavour === 'local'
+  //   ) {
+  //     return (
+  //       <LocalDemoTips
+  //         isLoggedIn={isLoggedIn}
+  //         onLogin={onLogin}
+  //         onEnableCloud={() =>
+  //           confirmEnableCloud(workspace, { openPageId: pageId })
+  //         }
+  //         onClose={() => {
+  //           setShowLocalDemoTips(false);
+  //         }}
+  //       />
+  //     );
+  //   }
 
   return (
     <BrowserWarning
